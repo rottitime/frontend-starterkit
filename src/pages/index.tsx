@@ -1,10 +1,28 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
+import { useQuery } from '@tanstack/react-query'
 
 const inter = Inter({ subsets: ['latin'] })
 
+export type Results = {
+  results: { name: string }[]
+}
+
+const fetchData = async () => {
+  const res = await fetch('https://swapi.dev/api/people/', {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  return await res.json()
+}
+
 export default function Home() {
+  const { data, isLoading } = useQuery<null, Error, Results>(['starwars'], {
+    queryFn: fetchData
+  })
+
   return (
     <>
       <Head>
@@ -21,14 +39,26 @@ export default function Home() {
           </p>
           <div></div>
         </div>
-
         <div>
           <Image src="/next.svg" alt="Next.js Logo" width={180} height={37} priority />
           <div>
             <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
           </div>
         </div>
-
+        <hr />
+        <h2>Fetch status</h2>
+        <div>
+          {isLoading ? (
+            'Loading...'
+          ) : (
+            <div data-testid="fetched-data">
+              {data?.results.map(({ name }) => (
+                <li key={name}>{name}</li>
+              ))}
+            </div>
+          )}
+        </div>
+        <hr />
         <div>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render, renderHook, RenderOptions, waitFor } from '@testing-library/react'
 import { ReactNode } from 'react'
 
@@ -30,7 +31,18 @@ const mockStorage = (() => {
 })()
 
 export const wrapper = (ui: ReactNode) => {
-  return <>{ui}</>
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false
+      }
+    }
+  })
+  return (
+    <QueryClientProvider client={queryClient}>
+      <>{ui}</>
+    </QueryClientProvider>
+  )
 }
 
 export const renderWithProviders = async (
