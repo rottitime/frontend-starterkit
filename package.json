@@ -1,7 +1,7 @@
 {
-  "name": "create-starter-kit",
+  "name": "@idotai/create-starter-kit",
   "version": "0.1.0",
-  "private": true,
+  "bin": "./bin/cli.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
