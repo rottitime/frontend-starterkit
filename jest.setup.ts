@@ -12,16 +12,7 @@ global.TextDecoder = require('util').TextDecoder
 require('jest-fetch-mock').enableMocks()
 
 jest.mock('next/config', () => () => ({
-  publicRuntimeConfig: {
-    apiUrl: 'http://myapp',
-    enableEmailVerify: true,
-    minutesPerDay: 444,
-    urls: {
-      landingSignin: 'landingSignin',
-      signin: 'signin',
-      emailConfirm: 'email-confirm',
-    },
-  },
+  publicRuntimeConfig: {}
 }))
 
 jest.mock('next/router', () => ({
@@ -29,6 +20,6 @@ jest.mock('next/router', () => ({
   useRouter: jest.fn(() => ({
     locale: 'en',
     push: jest.fn(),
-    replace: jest.fn(),
-  })),
+    replace: jest.fn()
+  }))
 }))
