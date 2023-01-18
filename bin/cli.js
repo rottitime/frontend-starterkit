@@ -14,7 +14,7 @@ const runCommand = (command) => {
 }
 
 const repoName = process.argv[2]
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/i-dot-ai/frontend-starterkit/tree/feature/962-npx-setup ${repoName}`
+const gitCheckoutCommand = `git clone --depth 1 --branch feature/962-npx-setup  https://github.com/i-dot-ai/frontend-starterkit ${repoName}`
 const installDepsCommand = `cd ${repoName} && npm ci`
 
 console.log(`Cloning the repository with name ${repoName}`)
