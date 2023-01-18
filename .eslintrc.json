@@ -33,6 +33,7 @@
       "extends": ["plugin:testing-library/react"],
       "rules": {
         "react/display-name": 0,
+        "testing-library/prefer-find-by": 0,
         "testing-library/no-container": "warn",
         "testing-library/no-node-access": "warn",
         "testing-library/prefer-presence-queries": 0
