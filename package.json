@@ -14,7 +14,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "npm run test:all",
     "preversion": "npm run lint",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"

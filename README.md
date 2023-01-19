@@ -3,10 +3,11 @@
 Simply run the below. Replace `project_name`
 
 ```
-npx @idotai/create-starter-kit project_name
+npx @rottitime/create-starter-kit project_name
 ```
 
 This will create, and install I-dot-ai frontend framework incorporating libraries and rules for the team coding guidelines:
+
 - Latest version of NextJS
 - Typescript
 - Jest, React library: For unit testing
@@ -18,8 +19,6 @@ This will create, and install I-dot-ai frontend framework incorporating librarie
 - ESlint team config rules
 - Prettier team config rules
 - Storybook: for documenting your components
-
-
 
 ## How to run the project
 
