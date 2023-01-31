@@ -14,7 +14,7 @@ const runCommand = (command) => {
 }
 
 const repoName = process.argv[2]
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/rottitime/frontend-starterkit ${repoName}`
+const gitCheckoutCommand = `git clone --depth 1 https://github.com/rottitime/frontend-starterkit ${repoName} && rm -rf ${repoName}/.git`
 const installDepsCommand = `cd ${repoName} && npm ci`
 
 console.log(`Cloning the repository with name ${repoName}`)
