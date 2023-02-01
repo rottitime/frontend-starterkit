@@ -14,8 +14,9 @@ const runCommand = (command) => {
 }
 
 const repoName = process.argv[2]
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/rottitime/frontend-starterkit ${repoName} && rm -rf ${repoName}/.git`
+const gitCheckoutCommand = `git clone --depth 1 https://github.com/rottitime/frontend-starterkit ${repoName} `
 const installDepsCommand = `cd ${repoName} && npm ci`
+const cleanupCommand = `cd ${repoName} && rm -rf .git bin`
 
 console.log(`Cloning the repository with name ${repoName}`)
 const checkedOut = runCommand(gitCheckoutCommand)
@@ -24,6 +25,10 @@ if (!checkedOut) process.exit(-1)
 console.log(`Installing dependencies for ${repoName}`)
 const installedDeps = runCommand(installDepsCommand)
 if (!installedDeps) process.exit(-1)
+
+console.log(`Cleanup for ${repoName}`)
+const cleanup = runCommand(cleanupCommand)
+if (!cleanup) process.exit(-1)
 
 console.log('Congratulations! You are ready. Follow the following commands to start')
 console.log(`cd ${repoName} && npm start`)
