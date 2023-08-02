@@ -1,5 +1,7 @@
 # Next JS starter kit
 
+This is a oneline command install 
+
 - Latest version of NextJS
 - Typescript
 - Jest, React library: For unit testing
@@ -11,6 +13,8 @@
 - ESlint team config rules
 - Prettier team config rules
 - Storybook: for documenting your components
+- Github workflow for storybook pages and deploy
+- Github workflow for checking unit tests pass
 
 Simply run the below. Replace `project_name`
 
