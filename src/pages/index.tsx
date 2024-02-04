@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import { useQuery } from '@tanstack/react-query'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -52,9 +52,7 @@ export default function Home() {
             'Loading...'
           ) : (
             <div data-testid="fetched-data">
-              {data?.results.map(({ name }) => (
-                <li key={name}>{name}</li>
-              ))}
+              {data?.results.map(({ name }) => <li key={name}>{name}</li>)}
             </div>
           )}
         </div>
