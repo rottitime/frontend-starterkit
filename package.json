@@ -1,6 +1,6 @@
 {
   "name": "@rottitime/create-starter-kit",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "bin": "./bin/cli.js",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/rottitime/frontend-starterkit#readme",
